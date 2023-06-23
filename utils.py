@@ -118,7 +118,7 @@ def get_boards_loser_indices(moves):
         loser = turn
     else:
         loser = -turn
-    loser_indices = [i - 1 for i, t in enumerate(turns) if t == loser]
+    loser_indices = [i for i, turn in enumerate(turns) if turn == loser]
     return boards, loser_indices
 
 
