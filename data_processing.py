@@ -18,7 +18,6 @@ def prepare_othello_dataset():
     df["move"] = df["transcript"].apply(transcript2moves)
     df["matrix"] = df["move"].apply(moves2matrices)
     df[["board", "loser_index"]] = df.apply(lambda x: get_boards_loser_indices(x["move"]), axis=1, result_type="expand")
-    df["board"] = df["board"].apply(lambda x: x[:-1])
     np_loser_move_matrix = create_loser_move_matrix(df["matrix"], df["loser_index"])
     np_loser_board = create_loser_board(df["board"], df["loser_index"])
     np_dataset = np.concatenate([np_loser_board, np_loser_move_matrix], axis=1)
