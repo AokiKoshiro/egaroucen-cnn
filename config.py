@@ -1,8 +1,8 @@
 hyperparameters = {
     'batch_size': 128,
     'hidden_size': 128,
-    'num_conv_block': 5,
-    'dropout': 0.5,
+    'num_conv_block': 8,
+    'dropout': 0.3,
     'learning_rate': 5e-4,
     'scheduler_step_size': 1,
     'scheduler_gamma': 0.9,
